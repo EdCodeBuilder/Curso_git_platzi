@@ -31,3 +31,6 @@ git config --list -> Lista todas las configuraciones del git, solo con el comand
 git config --list --show-origin -> Lista todas las configuraciones con su path de origen.
 
 * Cuando se usa - son comandos cortos, cuando se usa -- son comandos de palabras.
+
+git log (nombre del archivo) -> Muestra los logs del archivo.
+git show (nombre del archivo) -> Muestra los cambios del archivo.
