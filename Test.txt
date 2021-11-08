@@ -1,4 +1,5 @@
 Lineas de comando de linux:
+
 pdw -> path de la carpeta donde estamos apuntando.
 cd -> (change directory) apuntar a otra carpeta para ir hacia ella.
 ls -> mostrar archivos de la carpeta donde esta apuntando el puntero. En windows (dir)
@@ -9,14 +10,24 @@ clear -> limpia la consola.
 comando: control + l . limpia la consola.
 cd.. -> retorna a la ruta anterior en el path actual. En windows (cd ..).
 
-En linux y mac la terminal de comandos es sensible a las mayusculas, en windows no.
-Con (cd ) + tab se autocompleta el nombre de la carpeta o archivo de acuerdo a lo que tengas en el path.
+* En linux y mac la terminal de comandos es sensible a las mayusculas, en windows no.
+* Con (cd ) + tab se autocompleta el nombre de la carpeta o archivo de acuerdo a lo que tengas en el path.
 
 mkdir -> (Make directory) Crea una carpeta en el path actual.
 touch -> Crea archivo vacio.
-history -> muestra un log de todos los comandos ingresados.
-!(# de comando en el history) -> repite todos los comandos.
+history -> Muestra un log de todos los comandos ingresados.
+!(# de comando en el history) -> Repite todos los comandos.
 rm -> (Remove) Borra un archivo, mucho cuidado con este comando.
-comando --help -> explicacion de cada comando.
+comando --help -> Explicacion de cada comando.
 
 git rm --cached (nombre del archivo) -> Unstage el add del archivo, sin el --cached no lo ha quitado de la memoria ram.
+git commit -m '(Mensaje del commit)' -> Hace un commit de los archivos en Stage.
+git config --global user.email "(Correo del autor)" -> Configura de forma global el correo del usuario autor de los commit.
+git config --global user.name "(Nombre del autor)" -> Configura de forma global el nombre del usuario autor de los commit.
+
+* Sin el argumento --global , se realizan configuraciones de forma local.
+
+git config --list -> Lista todas las configuraciones del git, solo con el comando config se muestra una ayuda del comando, para listar global se usa antes el argumento --global.
+git config --list --show-origin -> Lista todas las configuraciones con su path de origen.
+
+* Cuando se usa - son comandos cortos, cuando se usa -- son comandos de palabras.
