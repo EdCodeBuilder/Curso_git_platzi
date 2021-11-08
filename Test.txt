@@ -34,3 +34,4 @@ git config --list --show-origin -> Lista todas las configuraciones con su path d
 
 git log (nombre del archivo) -> Muestra los logs del archivo.
 git show (nombre del archivo) -> Muestra los cambios del archivo.
+git diff (id de commit 1) (id de commit 2) -> muestra las diferencias entre 2 commit.
