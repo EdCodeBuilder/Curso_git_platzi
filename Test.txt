@@ -1,14 +1,14 @@
 Lineas de comando de linux:
 
-pdw -> path de la carpeta donde estamos apuntando.
-cd -> (change directory) apuntar a otra carpeta para ir hacia ella.
-ls -> mostrar archivos de la carpeta donde esta apuntando el puntero. En windows (dir)
-    argumentos: -al -> mostrar los archivos en una lista, incluido los archivos ocultos.
-    -l -> solo muestra los archivos visibles en una lista, no los ocultos.
-    -a -> muestra el grupo de archivos pero no en una lista.
-clear -> limpia la consola.
+pdw -> Path de la carpeta donde estamos apuntando.
+cd -> (change directory) Apuntar a otra carpeta para ir hacia ella.
+ls -> Mostrar archivos de la carpeta donde esta apuntando el puntero. En windows (dir)
+    argumentos: -al -> Mostrar los archivos en una lista, incluido los archivos ocultos.
+    -l -> Solo muestra los archivos visibles en una lista, no los ocultos.
+    -a -> Muestra el grupo de archivos pero no en una lista.
+clear -> Limpia la consola.
 comando: control + l . limpia la consola.
-cd.. -> retorna a la ruta anterior en el path actual. En windows (cd ..).
+cd.. -> Retorna a la ruta anterior en el path actual. En windows (cd ..).
 
 * En linux y mac la terminal de comandos es sensible a las mayusculas, en windows no.
 * Con (cd ) + tab se autocompleta el nombre de la carpeta o archivo de acuerdo a lo que tengas en el path.
@@ -20,7 +20,8 @@ history -> Muestra un log de todos los comandos ingresados.
 rm -> (Remove) Borra un archivo, mucho cuidado con este comando.
 comando --help -> Explicacion de cada comando.
 
-git rm --cached (nombre del archivo) -> Unstage el add del archivo, sin el --cached no lo ha quitado de la memoria ram.
+git rm --cached (nombre del archivo) -> Unstage el add del archivo, sin el *--cached* no lo ha quitado de la memoria ram.
+git rm --force (nombre del archivo) -> Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
 git commit -m '(Mensaje del commit)' -> Hace un commit de los archivos en Stage.
 git config --global user.email "(Correo del autor)" -> Configura de forma global el correo del usuario autor de los commit.
 git config --global user.name "(Nombre del autor)" -> Configura de forma global el nombre del usuario autor de los commit.
@@ -34,4 +35,16 @@ git config --list --show-origin -> Lista todas las configuraciones con su path d
 
 git log (nombre del archivo) -> Muestra los logs del archivo.
 git show (nombre del archivo) -> Muestra los cambios del archivo.
-git diff (id de commit 1) (id de commit 2) -> muestra las diferencias entre 2 commit.
+git diff (id de commit 1) (id de commit 2) -> Muestra las diferencias entre 2 commit.
+
+git status -> Nos permite ver el estado de todos nuestros archivos y carpetas.
+git add -> Nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar *git nombre-del-archivo-o-carpeta para* añadir archivos y carpetas individuales o *git add -A* para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
+git reset HEAD -> Nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.
+
+git fetch -> Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+git merge -> También usamos el comando *git merge* con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+git pull -> Básicamente, *git fetch* y *git merge* al mismo tiempo.
+git push -> Luego de hacer *git add* y *git commit* debemos ejecutar este comando para mandar los cambios al servidor remoto.
+
+git checkout (ID del commit) -> Nos permite viajar en el tiempo. Podemos volver a cualquier versión anterior de un archivo específico o incluso del proyecto entero. Esta también es la forma de crear ramas y movernos entre ellas.
+git reset -> En este caso, no solo “volvemos en el tiempo”, sino que borramos los cambios que hicimos después de este commit. con el argumento --hard, borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre). O, un poco más seguro, con el argumento --soft, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
